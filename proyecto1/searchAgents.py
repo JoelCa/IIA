@@ -271,6 +271,7 @@ class CornersProblem(search.SearchProblem):
         self.startingPosition = startingGameState.getPacmanPosition()
         top, right = self.walls.height-2, self.walls.width-2
         self.corners = ((1,1), (1,top), (right, 1), (right, top))
+        print("corners: {0}".format(self.corners))
         self.costFn = lambda x: 1
         for corner in self.corners:
             if not startingGameState.hasFood(*corner):
@@ -278,8 +279,7 @@ class CornersProblem(search.SearchProblem):
         
         # For display purposes
         self._visited, self._visitedlist, self._expanded = {}, [], 0
-
-		
+        #self._expanded = 0
 
         "*** YOUR CODE HERE ***"
         #inicializo mi estado
@@ -298,22 +298,23 @@ class CornersProblem(search.SearchProblem):
     def isGoalState(self, state):
         "Returns whether this search state is a goal state of the problem"
         "*** YOUR CODE HERE ***"
+        print("posible estado final: {0}".format(state))
         isGoal = False
         for i in range(0,3):
-        	if state == (self.corners[i],4):
-				isGoal = True
+            if state == (self.corners[i],4):
+                isGoal = True
+                break
 
+        #Si decomentan esto, no compila, se ve que para
+        #hacerlo compatible en este problema no basta con copiar y pegarlo
         # For display purposes only
-        if isGoal:
-            self._visitedlist.append(state)
-            import __main__
-            if '_display' in dir(__main__):
-                if 'drawExpandedCells' in dir(__main__._display): #@UndefinedVariable
-                    __main__._display.drawExpandedCells(self._visitedlist) #@UndefinedVariable
-
+        # if isGoal:
+        #     self._visitedlist.append(state)
+        #     import __main__
+        #     if '_display' in dir(__main__):
+        #         if 'drawExpandedCells' in dir(__main__._display): #@UndefinedVariable
+        #             __main__._display.drawExpandedCells(self._visitedlist) #@UndefinedVariable
         return isGoal
-
-
 
     def getSuccessors(self, state):
         """
@@ -326,17 +327,6 @@ class CornersProblem(search.SearchProblem):
          required to get there, and 'stepCost' is the incremental
          cost of expanding to that successor
         """
-
-#        successors = []
-#        for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
-#            x,y = state
-#            dx, dy = Actions.directionToVector(action)
-#            nextx, nexty = int(x + dx), int(y + dy)
-#            if not self.walls[nextx][nexty]:
-#                nextState = (nextx, nexty)
-#                cost = self.costFn(nextState)
-#                successors.append( ( nextState, action, cost) )
-
         successors = []
         for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
             # Add a successor state to the successor list if the action is legal
@@ -347,22 +337,19 @@ class CornersProblem(search.SearchProblem):
             #   hitsWall = self.walls[nextx][nexty]
 
             "*** YOUR CODE HERE ***"
-            
-            print(action)
-            print(state)
             (x,y), j = state
             dx, dy = Actions.directionToVector(action)
-            #print(dx,dy)
-	    nextx, nexty = int(x + dx), int(y + dy)
+            nextx, nexty = int(x + dx), int(y + dy)
             if not self.walls[nextx][nexty]:
                 nextState =  (nextx, nexty), j
                 for i in range(0,3):
-                	if (nextx, nexty) in self.corners[i]:
-                		nextState =  (nextx, nexty), (j+1)
+                    if (nextx, nexty) == self.corners[i]:
+                        nextState =  (nextx, nexty), j+1
+                        break
                 cost = self.costFn(nextState[0])
-                successors.append( ( nextState[0], action, cost) )
+                successors.append( ( nextState, action, cost) )
 
-        # Bookkeeping for display purposes
+        # para que sirve?
         self._expanded += 1
         if state[0] not in self._visited:
             self._visited[state[0]] = True

@@ -79,16 +79,20 @@ def search(problem, fringe):
         candidate = fringe.pop()
         state, actions = candidate
         if problem.isGoalState(state):
+            print("resultado: {0}".format(actions))
             return actions
         if state not in closed_set:
             closed_set.add(state)
-	    print("dentro de search {0}".format(state))
-            print("llamo a getSuccessors desde search")
+            #print("llamo a getSuccessors desde search")
 	    candidate_successors = problem.getSuccessors(state)
+            print("estado: {0}".format(state))
+	    #print("candidatos del succesor: {0}".format(candidate_successors))
+	    #print("lista de accciones {0}".format(actions))
             candidate_successors = filter(lambda x: x[0] not in closed_set, candidate_successors)
             candidate_successors = map(lambda x: (x[0], actions + [x[1]]), candidate_successors)
             for candidate in candidate_successors:
                 fringe.push(candidate)
+    print("termino explorando toda la frontera")
 
 
 def searchFn(problem, fringe, h):
