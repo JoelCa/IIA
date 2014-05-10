@@ -282,12 +282,26 @@ class CornersProblem(search.SearchProblem):
         #self._expanded = 0
 
         "*** YOUR CODE HERE ***"
+        #self.all_corners = set(self.corners)
+        self.corners_list = [0,0,0,0]
         #inicializo mi estado
-        self.initialState = (self.startingPosition, 0)
+        self.initialState = (self.startingPosition, tuple(self.corners_list))
         
-        for i in range(0,3):
+        for i in range(0,4):
             if self.startingPosition == self.corners[i]:
-                self.initialState = (self.startingPosition, 1)
+                self.corners_list[i] = 1
+                #self.initialState = (self.startingPosition,map(lambda x: (x if x != i else 1), self.corners_list))
+                self.initialState = (self.startingPosition,tuple(self.corners_list))
+                break
+
+        # if self.startingPosition == self.corners[0]:
+        #     self.initialState = (self.startingPosition, 1, 0, 0, 0)
+        # elif self.startingPosition == self.corners[1]:
+        #     self.initialState = (self.startingPosition, 0, 1, 0, 0)
+        # elif self.startingPosition == self.corners[2]:
+        #     self.initialState = (self.startingPosition, 0, 0, 1, 0)
+        # elif self.startingPosition == self.corners[3]:
+        #     self.initialState = (self.startingPosition, 0, 0, 0, 1)
 
 
     def getStartState(self):
@@ -298,13 +312,13 @@ class CornersProblem(search.SearchProblem):
     def isGoalState(self, state):
         "Returns whether this search state is a goal state of the problem"
         "*** YOUR CODE HERE ***"
-        print("posible estado final: {0}".format(state))
+        #print("posible estado final: {0}".format(state))
         isGoal = False
-        for i in range(0,3):
-            if state == (self.corners[i],4):
-                isGoal = True
-                break
-
+        state_list = list(state[1])
+        if reduce(lambda x, y: x+y, state_list) == 4:
+            isGoal = True
+        
+        #corners: ((1, 1), (1, 6), (6, 1), (6, 6)) en tinyMaze
         #Si decomentan esto, no compila, se ve que para
         #hacerlo compatible en este problema no basta con copiar y pegarlo
         # For display purposes only
@@ -329,33 +343,38 @@ class CornersProblem(search.SearchProblem):
         """
         successors = []
         for action in [Directions.NORTH, Directions.SOUTH, Directions.EAST, Directions.WEST]:
-            # Add a successor state to the successor list if the action is legal
-            # Here's a code snippet for figuring out whether a new position hits a wall:
-            #   x,y = currentPosition
-            #   dx, dy = Actions.directionToVector(action)
-            #   nextx, nexty = int(x + dx), int(y + dy)
-            #   hitsWall = self.walls[nextx][nexty]
 
             "*** YOUR CODE HERE ***"
-            (x,y), j = state
+            (x,y), corn = state
+            corn_list = list(corn)
             dx, dy = Actions.directionToVector(action)
             nextx, nexty = int(x + dx), int(y + dy)
             if not self.walls[nextx][nexty]:
-                nextState =  (nextx, nexty), j
-                for i in range(0,3):
-                    if (nextx, nexty) == self.corners[i]:
-                        nextState =  (nextx, nexty), j+1
+                nextState =  (nextx, nexty), corn
+                aux = True
+                #RANGE DE MIERDA: va del 0 al 3
+                for i in range(0,4):
+                    if ((nextx, nexty) == self.corners[i]) and (corn[i] == 1):
+                        aux = False
                         break
-                cost = self.costFn(nextState[0])
-                successors.append( ( nextState, action, cost) )
+                    if ((nextx, nexty) == self.corners[i]) and (corn[i] == 0):
+                        #nextState =  (nextx, nexty), map(lambda x: (x if x != i else 1), corn)
+                        corn_list[i] = 1
+                        nextState =  (nextx, nexty), tuple(corn_list)
+                        aux = True
+                        break
+                if aux:
+                    cost = self.costFn(nextState)
+                    successors.append( ( nextState, action, cost) )
 
         # para que sirve?
-        self._expanded += 1
-        if state[0] not in self._visited:
-            self._visited[state[0]] = True
-            self._visitedlist.append(state[0])
+        # self._expanded += 1
+        # if state[0] not in self._visited:
+        #     self._visited[state[0]] = True
+        #     self._visitedlist.append(state[0])
 
         self._expanded += 1
+        #print("sucesor : {0}".format(successors))
         return successors
 
     def getCostOfActions(self, actions):
