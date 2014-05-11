@@ -271,7 +271,7 @@ class CornersProblem(search.SearchProblem):
         self.startingPosition = startingGameState.getPacmanPosition()
         top, right = self.walls.height-2, self.walls.width-2
         self.corners = ((1,1), (1,top), (right, 1), (right, top))
-        print("corners: {0}".format(self.corners))
+        #print("corners: {0}".format(self.corners))
         self.costFn = lambda x: 1
         for corner in self.corners:
             if not startingGameState.hasFood(*corner):
@@ -405,10 +405,25 @@ def cornersHeuristic(state, problem):
     it should be admissible (as well as consistent).
     """
     corners = problem.corners # These are the corner coordinates
+    #NO use walls
     walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
 
     "*** YOUR CODE HERE ***"
-    return 0 # Default to trivial solution
+    pos, corn = state
+    corn_list = list(corn)
+    cuenta = 0
+    m, ind = 999, 0
+    while corn_list != [1,1,1,1]:
+        for i in range(0,4):
+            if corn_list[i] == 0:
+                val = abs(pos[0] - corners[i][0]) + abs(pos[1] - corners[i][1])
+                if m > val:
+                    m, ind = val, i
+        corn_list[ind] = 1
+        cuenta += m
+        pos = corners[ind]
+        m = 999
+    return cuenta
 
 class AStarCornersAgent(SearchAgent):
     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
