@@ -271,38 +271,24 @@ class CornersProblem(search.SearchProblem):
         self.startingPosition = startingGameState.getPacmanPosition()
         top, right = self.walls.height-2, self.walls.width-2
         self.corners = ((1,1), (1,top), (right, 1), (right, top))
-        #print("corners: {0}".format(self.corners))
         self.costFn = lambda x: 1
         for corner in self.corners:
             if not startingGameState.hasFood(*corner):
                 print 'Warning: no food in corner ' + str(corner)
         
         # For display purposes
-        self._visited, self._visitedlist, self._expanded = {}, [], 0
-        #self._expanded = 0
+        self._expanded = 0
+        
 
         "*** YOUR CODE HERE ***"
-        #self.all_corners = set(self.corners)
         self.corners_list = [0,0,0,0]
-        #inicializo mi estado
-        self.initialState = (self.startingPosition, tuple(self.corners_list))
+        self.initialState = (self.startingPosition, (0,0,0,0))
         
         for i in range(0,4):
             if self.startingPosition == self.corners[i]:
                 self.corners_list[i] = 1
-                #self.initialState = (self.startingPosition,map(lambda x: (x if x != i else 1), self.corners_list))
                 self.initialState = (self.startingPosition,tuple(self.corners_list))
                 break
-
-        # if self.startingPosition == self.corners[0]:
-        #     self.initialState = (self.startingPosition, 1, 0, 0, 0)
-        # elif self.startingPosition == self.corners[1]:
-        #     self.initialState = (self.startingPosition, 0, 1, 0, 0)
-        # elif self.startingPosition == self.corners[2]:
-        #     self.initialState = (self.startingPosition, 0, 0, 1, 0)
-        # elif self.startingPosition == self.corners[3]:
-        #     self.initialState = (self.startingPosition, 0, 0, 0, 1)
-
 
     def getStartState(self):
         "Returns the start state (in your state space, not the full Pacman state space)"
@@ -312,22 +298,10 @@ class CornersProblem(search.SearchProblem):
     def isGoalState(self, state):
         "Returns whether this search state is a goal state of the problem"
         "*** YOUR CODE HERE ***"
-        #print("posible estado final: {0}".format(state))
         isGoal = False
         state_list = list(state[1])
         if reduce(lambda x, y: x+y, state_list) == 4:
             isGoal = True
-        
-        #corners: ((1, 1), (1, 6), (6, 1), (6, 6)) en tinyMaze
-        #Si decomentan esto, no compila, se ve que para
-        #hacerlo compatible en este problema no basta con copiar y pegarlo
-        # For display purposes only
-        # if isGoal:
-        #     self._visitedlist.append(state)
-        #     import __main__
-        #     if '_display' in dir(__main__):
-        #         if 'drawExpandedCells' in dir(__main__._display): #@UndefinedVariable
-        #             __main__._display.drawExpandedCells(self._visitedlist) #@UndefinedVariable
         return isGoal
 
     def getSuccessors(self, state):
@@ -352,13 +326,11 @@ class CornersProblem(search.SearchProblem):
             if not self.walls[nextx][nexty]:
                 nextState =  (nextx, nexty), corn
                 aux = True
-                #RANGE DE MIERDA: va del 0 al 3
                 for i in range(0,4):
                     if ((nextx, nexty) == self.corners[i]) and (corn[i] == 1):
                         aux = False
                         break
                     if ((nextx, nexty) == self.corners[i]) and (corn[i] == 0):
-                        #nextState =  (nextx, nexty), map(lambda x: (x if x != i else 1), corn)
                         corn_list[i] = 1
                         nextState =  (nextx, nexty), tuple(corn_list)
                         aux = True
@@ -366,15 +338,8 @@ class CornersProblem(search.SearchProblem):
                 if aux:
                     cost = self.costFn(nextState)
                     successors.append( ( nextState, action, cost) )
-
-        # para que sirve?
-        # self._expanded += 1
-        # if state[0] not in self._visited:
-        #     self._visited[state[0]] = True
-        #     self._visitedlist.append(state[0])
-
+                
         self._expanded += 1
-        #print("sucesor : {0}".format(successors))
         return successors
 
     def getCostOfActions(self, actions):
@@ -405,25 +370,41 @@ def cornersHeuristic(state, problem):
     it should be admissible (as well as consistent).
     """
     corners = problem.corners # These are the corner coordinates
-    #NO use walls
     walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
+
+    """
+    #######################################################################################
+    Comentario respecto a la heuristica:
+    
+    Nuestra heuristica calcula la distancia de Manhattan entre la posicion dada, y la
+    esquina mas cercana no visitada, y luego (si todavia no recorrio las 4 esquinas)
+    suma la distancia en linea recta, desde la esquina anterior a esquina mas cercana
+    no visitada, y continua haciendo esto hasta que se hallan recorrido las 4 esquinas.
+
+    Consideramos un problema mas relajado, donde el pacman no tiene que esquivar las 
+    paredes del laberinto para recorrer las 4 esquinas. En consecuencia, la heuristica
+    que proponemos no retorna un valor superior al costo real, pues en el problema real
+    es necesario esquivar las paredes, y si estas no existen entonces nuestra heuristica
+    coincide con el costo real.
+    #######################################################################################
+    """
 
     "*** YOUR CODE HERE ***"
     pos, corn = state
     corn_list = list(corn)
-    cuenta = 0
+    count = 0
     m, ind = 999, 0
     while corn_list != [1,1,1,1]:
         for i in range(0,4):
             if corn_list[i] == 0:
-                val = abs(pos[0] - corners[i][0]) + abs(pos[1] - corners[i][1])
+                val = util.manhattanDistance(pos, corners[i])
                 if m > val:
                     m, ind = val, i
         corn_list[ind] = 1
-        cuenta += m
+        count += m
         pos = corners[ind]
         m = 999
-    return cuenta
+    return count
 
 class AStarCornersAgent(SearchAgent):
     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
