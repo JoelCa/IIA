@@ -1,0 +1,1468 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/alumno/ontologies/2014/4/untitled-ontology-3"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     ontologyIRI="http://www.semanticweb.org/alumno/ontologies/2014/4/untitled-ontology-3">
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Declaration>
+        <Class IRI="#Camiseta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Campo_de_entrenamiento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Directivo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Entrenamiento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Equipo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Estadio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Indumentaria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Instalación"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Jugador"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Medias"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pantalón"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Persona"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Primera_División"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Segunda_División"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Técnico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Uniforme"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#compone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#compuesta_por"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#debuto_en"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#disputa_partidos_local_en"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#entrena_a"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#entrenan_en"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#es_entrenado_por"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#es_presidida_por"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#es_vestido_por"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#está_formado"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#forman"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#preside"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#viste"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#apertura"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#apodo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#año_debut"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#capacidad"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#colores"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#estatura"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#goles"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#marca"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nombre_completo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#partidos_internacionales"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#posición_última_liga"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#títulos_ganados"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alejandro_Maron"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alfonso_&#39;el_loco&#39;_Todeschini"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alfredo_Enzo_Olaeta"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alfredo_Fasce"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Asociacion_Alemana_de_Quilmes"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banco_Ciudad"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banco_Provincia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Banfield"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Camiseta_Rayada_Negro_Azul"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Campo_Eva_Peron"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Campo_Figueroa_Alcorta"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Eduardo_Spinosa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Emiliano_Avaca"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Enrique_Lombardi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Estudiantes_de_la_Plata"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Facundo_Harte"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GEBA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gerardo_Schweers"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hector_Jose_Daniel_Faquetti"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hugo_Cesar_Marre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ivan_Barrios"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Iñaki_Alvarez"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jockey"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jose_Pedro_Beraldi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Juan_Manuel_Oviedo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lanus"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Leonardo_del_Palacio"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lomas"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lucas_Goñi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lucas_Harte"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Medias_Negras"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Michel_Tristan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pantalón_Rayado_Negro_Azul"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Roberto_Campbell"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Santiago_Bielsa"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Universitario"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#musculosa_y_short"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Camiseta"/>
+        <Class IRI="#Uniforme"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Campo_de_entrenamiento"/>
+        <Class IRI="#Instalación"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Directivo"/>
+        <Class IRI="#Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Entrenamiento"/>
+        <Class IRI="#Indumentaria"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Estadio"/>
+        <Class IRI="#Instalación"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Jugador"/>
+        <Class IRI="#Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Medias"/>
+        <Class IRI="#Uniforme"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pantalón"/>
+        <Class IRI="#Uniforme"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Primera_División"/>
+        <Class IRI="#Equipo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Segunda_División"/>
+        <Class IRI="#Equipo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Técnico"/>
+        <Class IRI="#Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Uniforme"/>
+        <Class IRI="#Indumentaria"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Directivo"/>
+        <Class IRI="#Jugador"/>
+        <Class IRI="#Técnico"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Primera_División"/>
+        <Class IRI="#Segunda_División"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Directivo"/>
+        <NamedIndividual IRI="#Alejandro_Maron"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Jugador"/>
+        <NamedIndividual IRI="#Alfonso_&#39;el_loco&#39;_Todeschini"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Directivo"/>
+        <NamedIndividual IRI="#Alfredo_Enzo_Olaeta"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Directivo"/>
+        <NamedIndividual IRI="#Alfredo_Fasce"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Primera_División"/>
+        <NamedIndividual IRI="#Asociacion_Alemana_de_Quilmes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Primera_División"/>
+        <NamedIndividual IRI="#Banco_Ciudad"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Primera_División"/>
+        <NamedIndividual IRI="#Banco_Provincia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Segunda_División"/>
+        <NamedIndividual IRI="#Banfield"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Camiseta"/>
+        <NamedIndividual IRI="#Camiseta_Rayada_Negro_Azul"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Campo_de_entrenamiento"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Estadio"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Campo_de_entrenamiento"/>
+        <NamedIndividual IRI="#Campo_Eva_Peron"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Estadio"/>
+        <NamedIndividual IRI="#Campo_Eva_Peron"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Campo_de_entrenamiento"/>
+        <NamedIndividual IRI="#Campo_Figueroa_Alcorta"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Estadio"/>
+        <NamedIndividual IRI="#Campo_Figueroa_Alcorta"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Directivo"/>
+        <NamedIndividual IRI="#Eduardo_Spinosa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Jugador"/>
+        <NamedIndividual IRI="#Emiliano_Avaca"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Directivo"/>
+        <NamedIndividual IRI="#Enrique_Lombardi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Segunda_División"/>
+        <NamedIndividual IRI="#Estudiantes_de_la_Plata"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Jugador"/>
+        <NamedIndividual IRI="#Facundo_Harte"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Primera_División"/>
+        <NamedIndividual IRI="#GEBA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Directivo"/>
+        <NamedIndividual IRI="#Gerardo_Schweers"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Directivo"/>
+        <NamedIndividual IRI="#Hector_Jose_Daniel_Faquetti"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Directivo"/>
+        <NamedIndividual IRI="#Hugo_Cesar_Marre"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Indumentaria"/>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Jugador"/>
+        <NamedIndividual IRI="#Ivan_Barrios"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Jugador"/>
+        <NamedIndividual IRI="#Iñaki_Alvarez"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Segunda_División"/>
+        <NamedIndividual IRI="#Jockey"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Directivo"/>
+        <NamedIndividual IRI="#Jose_Pedro_Beraldi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Jugador"/>
+        <NamedIndividual IRI="#Juan_Manuel_Oviedo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Segunda_División"/>
+        <NamedIndividual IRI="#Lanus"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Jugador"/>
+        <NamedIndividual IRI="#Leonardo_del_Palacio"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Primera_División"/>
+        <NamedIndividual IRI="#Lomas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Jugador"/>
+        <NamedIndividual IRI="#Lucas_Goñi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Jugador"/>
+        <NamedIndividual IRI="#Lucas_Harte"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Medias"/>
+        <NamedIndividual IRI="#Medias_Negras"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Técnico"/>
+        <NamedIndividual IRI="#Michel_Tristan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pantalón"/>
+        <NamedIndividual IRI="#Pantalón_Rayado_Negro_Azul"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Directivo"/>
+        <NamedIndividual IRI="#Roberto_Campbell"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Jugador"/>
+        <NamedIndividual IRI="#Santiago_Bielsa"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Segunda_División"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Entrenamiento"/>
+        <NamedIndividual IRI="#musculosa_y_short"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#preside"/>
+        <NamedIndividual IRI="#Alejandro_Maron"/>
+        <NamedIndividual IRI="#Lanus"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Alfonso_&#39;el_loco&#39;_Todeschini"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Alfonso_&#39;el_loco&#39;_Todeschini"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#forman"/>
+        <NamedIndividual IRI="#Alfonso_&#39;el_loco&#39;_Todeschini"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#preside"/>
+        <NamedIndividual IRI="#Alfredo_Enzo_Olaeta"/>
+        <NamedIndividual IRI="#Jockey"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#preside"/>
+        <NamedIndividual IRI="#Alfredo_Fasce"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_presidida_por"/>
+        <NamedIndividual IRI="#Banco_Ciudad"/>
+        <NamedIndividual IRI="#Hector_Jose_Daniel_Faquetti"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compone"/>
+        <NamedIndividual IRI="#Camiseta_Rayada_Negro_Azul"/>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#preside"/>
+        <NamedIndividual IRI="#Eduardo_Spinosa"/>
+        <NamedIndividual IRI="#Banfield"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Emiliano_Avaca"/>
+        <NamedIndividual IRI="#Campo_Figueroa_Alcorta"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Emiliano_Avaca"/>
+        <NamedIndividual IRI="#GEBA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#forman"/>
+        <NamedIndividual IRI="#Emiliano_Avaca"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#preside"/>
+        <NamedIndividual IRI="#Enrique_Lombardi"/>
+        <NamedIndividual IRI="#Estudiantes_de_la_Plata"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Facundo_Harte"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Facundo_Harte"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#forman"/>
+        <NamedIndividual IRI="#Facundo_Harte"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#preside"/>
+        <NamedIndividual IRI="#Gerardo_Schweers"/>
+        <NamedIndividual IRI="#Asociacion_Alemana_de_Quilmes"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#preside"/>
+        <NamedIndividual IRI="#Hector_Jose_Daniel_Faquetti"/>
+        <NamedIndividual IRI="#Banco_Ciudad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#preside"/>
+        <NamedIndividual IRI="#Hugo_Cesar_Marre"/>
+        <NamedIndividual IRI="#Banco_Provincia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compuesta_por"/>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+        <NamedIndividual IRI="#Pantalón_Rayado_Negro_Azul"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compuesta_por"/>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+        <NamedIndividual IRI="#Medias_Negras"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compuesta_por"/>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+        <NamedIndividual IRI="#Camiseta_Rayada_Negro_Azul"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compuesta_por"/>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+        <NamedIndividual IRI="#musculosa_y_short"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_vestido_por"/>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Ivan_Barrios"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Ivan_Barrios"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#forman"/>
+        <NamedIndividual IRI="#Ivan_Barrios"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Iñaki_Alvarez"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Iñaki_Alvarez"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#forman"/>
+        <NamedIndividual IRI="#Iñaki_Alvarez"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_presidida_por"/>
+        <NamedIndividual IRI="#Jockey"/>
+        <NamedIndividual IRI="#Alfredo_Enzo_Olaeta"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#preside"/>
+        <NamedIndividual IRI="#Jose_Pedro_Beraldi"/>
+        <NamedIndividual IRI="#GEBA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Juan_Manuel_Oviedo"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Juan_Manuel_Oviedo"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#forman"/>
+        <NamedIndividual IRI="#Juan_Manuel_Oviedo"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_presidida_por"/>
+        <NamedIndividual IRI="#Lanus"/>
+        <NamedIndividual IRI="#Alejandro_Maron"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Leonardo_del_Palacio"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Leonardo_del_Palacio"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#forman"/>
+        <NamedIndividual IRI="#Leonardo_del_Palacio"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_presidida_por"/>
+        <NamedIndividual IRI="#Lomas"/>
+        <NamedIndividual IRI="#Roberto_Campbell"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Lucas_Goñi"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Lucas_Goñi"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#forman"/>
+        <NamedIndividual IRI="#Lucas_Goñi"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Lucas_Harte"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Lucas_Harte"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#forman"/>
+        <NamedIndividual IRI="#Lucas_Harte"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compone"/>
+        <NamedIndividual IRI="#Medias_Negras"/>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#entrena_a"/>
+        <NamedIndividual IRI="#Michel_Tristan"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compone"/>
+        <NamedIndividual IRI="#Pantalón_Rayado_Negro_Azul"/>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#preside"/>
+        <NamedIndividual IRI="#Roberto_Campbell"/>
+        <NamedIndividual IRI="#Lomas"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Santiago_Bielsa"/>
+        <NamedIndividual IRI="#Campo_Eva_Peron"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#debuto_en"/>
+        <NamedIndividual IRI="#Santiago_Bielsa"/>
+        <NamedIndividual IRI="#Jockey"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#forman"/>
+        <NamedIndividual IRI="#Santiago_Bielsa"/>
+        <NamedIndividual IRI="#Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#disputa_partidos_local_en"/>
+        <NamedIndividual IRI="#Universitario"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#entrenan_en"/>
+        <NamedIndividual IRI="#Universitario"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#es_entrenado_por"/>
+        <NamedIndividual IRI="#Universitario"/>
+        <NamedIndividual IRI="#Michel_Tristan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#viste"/>
+        <NamedIndividual IRI="#Universitario"/>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compone"/>
+        <NamedIndividual IRI="#musculosa_y_short"/>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#apodo"/>
+        <NamedIndividual IRI="#Alfonso_&#39;el_loco&#39;_Todeschini"/>
+        <Literal datatypeIRI="&xsd;string">El loco</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#año_debut"/>
+        <NamedIndividual IRI="#Alfonso_&#39;el_loco&#39;_Todeschini"/>
+        <Literal datatypeIRI="&xsd;integer">2002</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#estatura"/>
+        <NamedIndividual IRI="#Alfonso_&#39;el_loco&#39;_Todeschini"/>
+        <Literal datatypeIRI="&xsd;integer">181</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#goles"/>
+        <NamedIndividual IRI="#Alfonso_&#39;el_loco&#39;_Todeschini"/>
+        <Literal datatypeIRI="&xsd;integer">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre_completo"/>
+        <NamedIndividual IRI="#Alfonso_&#39;el_loco&#39;_Todeschini"/>
+        <Literal datatypeIRI="&xsd;string">Alfonso Todeschini</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#partidos_internacionales"/>
+        <NamedIndividual IRI="#Alfonso_&#39;el_loco&#39;_Todeschini"/>
+        <Literal datatypeIRI="&xsd;integer">20</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#títulos_ganados"/>
+        <NamedIndividual IRI="#Asociacion_Alemana_de_Quilmes"/>
+        <Literal datatypeIRI="&xsd;integer">3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#títulos_ganados"/>
+        <NamedIndividual IRI="#Banco_Ciudad"/>
+        <Literal datatypeIRI="&xsd;integer">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colores"/>
+        <NamedIndividual IRI="#Camiseta_Rayada_Negro_Azul"/>
+        <Literal datatypeIRI="&xsd;string">Azul</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colores"/>
+        <NamedIndividual IRI="#Camiseta_Rayada_Negro_Azul"/>
+        <Literal datatypeIRI="&xsd;string">Negro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#capacidad"/>
+        <NamedIndividual IRI="#Campo_Dr._Fernando_Ruiz"/>
+        <Literal datatypeIRI="&xsd;integer">500</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#apodo"/>
+        <NamedIndividual IRI="#Emiliano_Avaca"/>
+        <Literal datatypeIRI="&xsd;string">Pulga</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#año_debut"/>
+        <NamedIndividual IRI="#Emiliano_Avaca"/>
+        <Literal datatypeIRI="&xsd;integer">1998</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#estatura"/>
+        <NamedIndividual IRI="#Emiliano_Avaca"/>
+        <Literal datatypeIRI="&xsd;integer">165</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre_completo"/>
+        <NamedIndividual IRI="#Emiliano_Avaca"/>
+        <Literal datatypeIRI="&xsd;string">Emiliano Avaca</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#partidos_internacionales"/>
+        <NamedIndividual IRI="#Emiliano_Avaca"/>
+        <Literal datatypeIRI="&xsd;integer">46</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#apodo"/>
+        <NamedIndividual IRI="#Facundo_Harte"/>
+        <Literal datatypeIRI="&xsd;string">Facu</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#año_debut"/>
+        <NamedIndividual IRI="#Facundo_Harte"/>
+        <Literal datatypeIRI="&xsd;integer">2007</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#estatura"/>
+        <NamedIndividual IRI="#Facundo_Harte"/>
+        <Literal datatypeIRI="&xsd;integer">175</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#goles"/>
+        <NamedIndividual IRI="#Facundo_Harte"/>
+        <Literal datatypeIRI="&xsd;integer">2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre_completo"/>
+        <NamedIndividual IRI="#Facundo_Harte"/>
+        <Literal datatypeIRI="&xsd;string">Facundo Harte</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#partidos_internacionales"/>
+        <NamedIndividual IRI="#Facundo_Harte"/>
+        <Literal datatypeIRI="&xsd;integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#títulos_ganados"/>
+        <NamedIndividual IRI="#GEBA"/>
+        <Literal datatypeIRI="&xsd;integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#marca"/>
+        <NamedIndividual IRI="#Indumentaria_Universitario"/>
+        <Literal datatypeIRI="&xsd;string">Esrovi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#apodo"/>
+        <NamedIndividual IRI="#Ivan_Barrios"/>
+        <Literal datatypeIRI="&xsd;string">Ipan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#año_debut"/>
+        <NamedIndividual IRI="#Ivan_Barrios"/>
+        <Literal datatypeIRI="&xsd;integer">2008</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#estatura"/>
+        <NamedIndividual IRI="#Ivan_Barrios"/>
+        <Literal datatypeIRI="&xsd;integer">177</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#goles"/>
+        <NamedIndividual IRI="#Ivan_Barrios"/>
+        <Literal datatypeIRI="&xsd;integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre_completo"/>
+        <NamedIndividual IRI="#Ivan_Barrios"/>
+        <Literal datatypeIRI="&xsd;string">Ivan David Barrios</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#partidos_internacionales"/>
+        <NamedIndividual IRI="#Ivan_Barrios"/>
+        <Literal datatypeIRI="&xsd;integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#apodo"/>
+        <NamedIndividual IRI="#Iñaki_Alvarez"/>
+        <Literal datatypeIRI="&xsd;string">Iña</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#año_debut"/>
+        <NamedIndividual IRI="#Iñaki_Alvarez"/>
+        <Literal datatypeIRI="&xsd;integer">1999</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#estatura"/>
+        <NamedIndividual IRI="#Iñaki_Alvarez"/>
+        <Literal datatypeIRI="&xsd;integer">172</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#goles"/>
+        <NamedIndividual IRI="#Iñaki_Alvarez"/>
+        <Literal datatypeIRI="&xsd;integer">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre_completo"/>
+        <NamedIndividual IRI="#Iñaki_Alvarez"/>
+        <Literal datatypeIRI="&xsd;string">Iñaki Alvarez</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#partidos_internacionales"/>
+        <NamedIndividual IRI="#Iñaki_Alvarez"/>
+        <Literal datatypeIRI="&xsd;integer">125</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#apodo"/>
+        <NamedIndividual IRI="#Juan_Manuel_Oviedo"/>
+        <Literal datatypeIRI="&xsd;string">Robot</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#año_debut"/>
+        <NamedIndividual IRI="#Juan_Manuel_Oviedo"/>
+        <Literal datatypeIRI="&xsd;integer">2003</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#estatura"/>
+        <NamedIndividual IRI="#Juan_Manuel_Oviedo"/>
+        <Literal datatypeIRI="&xsd;integer">167</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#goles"/>
+        <NamedIndividual IRI="#Juan_Manuel_Oviedo"/>
+        <Literal datatypeIRI="&xsd;integer">1</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre_completo"/>
+        <NamedIndividual IRI="#Juan_Manuel_Oviedo"/>
+        <Literal datatypeIRI="&xsd;string">Juan Manuel Oviedo</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#partidos_internacionales"/>
+        <NamedIndividual IRI="#Juan_Manuel_Oviedo"/>
+        <Literal datatypeIRI="&xsd;integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#apodo"/>
+        <NamedIndividual IRI="#Leonardo_del_Palacio"/>
+        <Literal datatypeIRI="&xsd;string">Negro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#año_debut"/>
+        <NamedIndividual IRI="#Leonardo_del_Palacio"/>
+        <Literal datatypeIRI="&xsd;integer">2008</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#estatura"/>
+        <NamedIndividual IRI="#Leonardo_del_Palacio"/>
+        <Literal datatypeIRI="&xsd;integer">165</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#goles"/>
+        <NamedIndividual IRI="#Leonardo_del_Palacio"/>
+        <Literal datatypeIRI="&xsd;integer">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre_completo"/>
+        <NamedIndividual IRI="#Leonardo_del_Palacio"/>
+        <Literal datatypeIRI="&xsd;string">Leonardo Del Palacio</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#partidos_internacionales"/>
+        <NamedIndividual IRI="#Leonardo_del_Palacio"/>
+        <Literal datatypeIRI="&xsd;integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#apodo"/>
+        <NamedIndividual IRI="#Lucas_Goñi"/>
+        <Literal datatypeIRI="&xsd;string">Castor</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#año_debut"/>
+        <NamedIndividual IRI="#Lucas_Goñi"/>
+        <Literal datatypeIRI="&xsd;integer">2000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#estatura"/>
+        <NamedIndividual IRI="#Lucas_Goñi"/>
+        <Literal datatypeIRI="&xsd;integer">173
+</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#goles"/>
+        <NamedIndividual IRI="#Lucas_Goñi"/>
+        <Literal datatypeIRI="&xsd;integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre_completo"/>
+        <NamedIndividual IRI="#Lucas_Goñi"/>
+        <Literal datatypeIRI="&xsd;string">Lucas Goñi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#partidos_internacionales"/>
+        <NamedIndividual IRI="#Lucas_Goñi"/>
+        <Literal datatypeIRI="&xsd;integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#apodo"/>
+        <NamedIndividual IRI="#Lucas_Harte"/>
+        <Literal datatypeIRI="&xsd;string">Lucas</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#año_debut"/>
+        <NamedIndividual IRI="#Lucas_Harte"/>
+        <Literal datatypeIRI="&xsd;integer">2007</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#estatura"/>
+        <NamedIndividual IRI="#Lucas_Harte"/>
+        <Literal datatypeIRI="&xsd;integer">176</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#goles"/>
+        <NamedIndividual IRI="#Lucas_Harte"/>
+        <Literal datatypeIRI="&xsd;integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre_completo"/>
+        <NamedIndividual IRI="#Lucas_Harte"/>
+        <Literal datatypeIRI="&xsd;string">Lucas Harte</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#partidos_internacionales"/>
+        <NamedIndividual IRI="#Lucas_Harte"/>
+        <Literal datatypeIRI="&xsd;integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colores"/>
+        <NamedIndividual IRI="#Medias_Negras"/>
+        <Literal datatypeIRI="&xsd;string">Negro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#colores"/>
+        <NamedIndividual IRI="#Pantalón_Rayado_Negro_Azul"/>
+        <Literal datatypeIRI="&xsd;string">Negro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#apodo"/>
+        <NamedIndividual IRI="#Santiago_Bielsa"/>
+        <Literal datatypeIRI="&xsd;string">Pájaro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#año_debut"/>
+        <NamedIndividual IRI="#Santiago_Bielsa"/>
+        <Literal datatypeIRI="&xsd;integer">2002</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#estatura"/>
+        <NamedIndividual IRI="#Santiago_Bielsa"/>
+        <Literal datatypeIRI="&xsd;integer">179</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#goles"/>
+        <NamedIndividual IRI="#Santiago_Bielsa"/>
+        <Literal datatypeIRI="&xsd;integer">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#nombre_completo"/>
+        <NamedIndividual IRI="#Santiago_Bielsa"/>
+        <Literal datatypeIRI="&xsd;string">Santiago Bielsa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#partidos_internacionales"/>
+        <NamedIndividual IRI="#Santiago_Bielsa"/>
+        <Literal datatypeIRI="&xsd;integer">0</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#posición_última_liga"/>
+        <NamedIndividual IRI="#Universitario"/>
+        <Literal datatypeIRI="&xsd;integer">4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#títulos_ganados"/>
+        <NamedIndividual IRI="#Universitario"/>
+        <Literal datatypeIRI="&xsd;integer">1</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#compone"/>
+        <ObjectProperty IRI="#compuesta_por"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#es_entrenado_por"/>
+        <ObjectProperty IRI="#entrena_a"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#preside"/>
+        <ObjectProperty IRI="#es_presidida_por"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#es_vestido_por"/>
+        <ObjectProperty IRI="#viste"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#forman"/>
+        <ObjectProperty IRI="#está_formado"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#compone"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#disputa_partidos_local_en"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#entrena_a"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#entrenan_en"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#es_entrenado_por"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#es_presidida_por"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#es_vestido_por"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#forman"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#preside"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#viste"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#compuesta_por"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#entrena_a"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#entrenan_en"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#es_entrenado_por"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#es_presidida_por"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#es_vestido_por"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#está_formado"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#preside"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#viste"/>
+    </InverseFunctionalObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#compone"/>
+        <ObjectUnionOf>
+            <Class IRI="#Camiseta"/>
+            <Class IRI="#Entrenamiento"/>
+            <Class IRI="#Medias"/>
+            <Class IRI="#Pantalón"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#compuesta_por"/>
+        <Class IRI="#Indumentaria"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#debuto_en"/>
+        <Class IRI="#Jugador"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#disputa_partidos_local_en"/>
+        <Class IRI="#Equipo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#entrena_a"/>
+        <Class IRI="#Técnico"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#entrenan_en"/>
+        <Class IRI="#Equipo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#es_entrenado_por"/>
+        <Class IRI="#Equipo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#es_presidida_por"/>
+        <Class IRI="#Equipo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#es_vestido_por"/>
+        <Class IRI="#Indumentaria"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#está_formado"/>
+        <Class IRI="#Equipo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#forman"/>
+        <Class IRI="#Jugador"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#preside"/>
+        <Class IRI="#Directivo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#viste"/>
+        <Class IRI="#Equipo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#compone"/>
+        <Class IRI="#Indumentaria"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#compuesta_por"/>
+        <ObjectUnionOf>
+            <Class IRI="#Camiseta"/>
+            <Class IRI="#Entrenamiento"/>
+            <Class IRI="#Medias"/>
+            <Class IRI="#Pantalón"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#debuto_en"/>
+        <ObjectUnionOf>
+            <Class IRI="#Equipo"/>
+            <Class IRI="#Estadio"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#disputa_partidos_local_en"/>
+        <Class IRI="#Estadio"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#entrena_a"/>
+        <Class IRI="#Equipo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#entrenan_en"/>
+        <Class IRI="#Campo_de_entrenamiento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#es_entrenado_por"/>
+        <Class IRI="#Técnico"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#es_presidida_por"/>
+        <Class IRI="#Directivo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#es_vestido_por"/>
+        <Class IRI="#Equipo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#está_formado"/>
+        <Class IRI="#Jugador"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#forman"/>
+        <Class IRI="#Equipo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#preside"/>
+        <Class IRI="#Equipo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#viste"/>
+        <Class IRI="#Indumentaria"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#apertura"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#apodo"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#año_debut"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#capacidad"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#estatura"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#goles"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#marca"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#nombre_completo"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#partidos_internacionales"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#posición_última_liga"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#títulos_ganados"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apertura"/>
+        <Class IRI="#Estadio"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#apodo"/>
+        <ObjectUnionOf>
+            <Class IRI="#Equipo"/>
+            <Class IRI="#Jugador"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#año_debut"/>
+        <Class IRI="#Jugador"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#capacidad"/>
+        <Class IRI="#Estadio"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#colores"/>
+        <ObjectUnionOf>
+            <Class IRI="#Camiseta"/>
+            <Class IRI="#Medias"/>
+            <Class IRI="#Pantalón"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#estatura"/>
+        <Class IRI="#Jugador"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#goles"/>
+        <Class IRI="#Jugador"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#marca"/>
+        <Class IRI="#Indumentaria"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nombre_completo"/>
+        <ObjectUnionOf>
+            <Class IRI="#Estadio"/>
+            <Class IRI="#Persona"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#partidos_internacionales"/>
+        <Class IRI="#Jugador"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#posición_última_liga"/>
+        <Class IRI="#Equipo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#títulos_ganados"/>
+        <Class IRI="#Equipo"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#apertura"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#apodo"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#año_debut"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#capacidad"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#colores"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#estatura"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#goles"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#marca"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nombre_completo"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#partidos_internacionales"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#posición_última_liga"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#títulos_ganados"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
