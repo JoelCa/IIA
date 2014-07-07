@@ -1,0 +1,223 @@
+\documentclass[a4paper, 8pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[spanish]{babel}
+\usepackage{enumerate}
+
+	\addtolength{\oddsidemargin}{-.875in}
+	\addtolength{\evensidemargin}{-.875in}
+	\addtolength{\textwidth}{1.75in}
+
+	\addtolength{\topmargin}{-.875in}
+	\addtolength{\textheight}{1.75in}
+
+\title{Trabajo práctico de lógica borrosa \\ Introducción a la inteligencia artificial}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+\section{Explicación del problema}
+
+	El objetivo de nuestro análisis consiste en estimar el grado de saturación por día, que sufre una persona luego de finalizar la lectura de un cuento o novela. Para ello, tenemos en cuenta los siguientes factores:
+\begin{enumerate}[a)]
+  \item El tiempo libre por día que tiene el lector.
+  \item El plazo máximo para finalizar la lectura.
+  \item El tiempo esperado para finalizar la lectura.
+\end{enumerate}
+
+Previamente, obtenemos el pto. (c), mediante la información dada por:
+\begin{enumerate}[a)]
+\setcounter{enumi}{3}
+  \item El número de páginas del libro.
+  \item La edad del lector.
+  \item El grado de interés del lector en el libro.
+\end{enumerate}
+
+\section{Etapas del análisis}
+
+\subsection{Primera etapa}
+
+Utilizamos las siguientes variables lingüísticas:
+
+\begin{itemize}
+\item Las páginas (T)
+
+  Rango de T: [0..1000] hojas.
+
+  Conjuntos borrosos:
+  
+  \begin{itemize}
+        \item \textit{Pequeño} 0 - 450
+        \item \textit{Medio} 250 - 700
+        \item \textit{Grande} 500 - 1000
+  \end{itemize}
+  
+\item La edad (E). 
+
+  Rango de E: [10..90] años.
+  
+  Conjuntos borrosos:
+  
+  \begin{itemize}
+        \item \textit{Joven} 10 - 30
+        \item \textit{Joven\_Adulto} 20 - 50
+        \item \textit{Adulto} 35 - 90
+  \end{itemize}
+        
+\item El interés (I).
+
+  Rango de I: [0..100] por ciento.
+  
+  Conjuntos borrosos:
+  
+  \begin{itemize}
+        \item \textit{Bajo} 0 - 40
+        \item \textit{Medio} 30 - 70
+        \item \textit{Alto} 60 - 100
+  \end{itemize}
+  
+\item El tiempo de lectura (TF).
+
+  Rango de TF: [0..200] horas.
+
+  Conjuntos borrosos:
+  
+  \begin{itemize}
+        \item \textit{Bajo} 0 - 30
+        \item \textit{Medio\_Bajo} 20 - 80
+        \item \textit{Medio\_Alto} 60 - 120
+        \item \textit{Alto} 100 - 200
+  \end{itemize}
+\end{itemize}
+
+Las variables de entrada son T, E, y I.
+Mientras que la variable de salida es TF.  
+
+\subsection{Segunda etapa}
+
+En esta etapa utilizamos las variables lingüísticas:
+
+\begin{itemize}
+\item El tiempo de lectura (TF).
+
+\item El tiempo libre (TL).
+
+  Rango de TL: [0..14] horas.
+    
+  Conjuntos borrosos:
+    
+  \begin{itemize}
+        \item \textit{Poco} 0 - 6
+        \item \textit{Medio} 4 - 10
+        \item \textit{Alto} 8 - 14
+  \end{itemize}
+        
+\item El plazo límite (PM)
+
+  Rango de PM: [1..31] días.
+
+  Conjuntos borrosos:
+  
+  \begin{itemize}
+        \item \textit{Bajo} 1 - 25
+        \item \textit{Alto} 15 - 31
+  \end{itemize}
+  
+\item La saturación (GS).
+
+  Rango de GS: [0..1] $\times 10^2$ por ciento.
+
+  Conjuntos borrosos:
+  
+  \begin{itemize}
+        \item \textit{Bajo} 0 - 35
+        \item \textit{Medio} 20 - 60
+        \item \textit{Alto} 50 - 100
+  \end{itemize}
+\end{itemize}
+
+Las variables de entrada son TF, TL, y PM.
+Mientras que la variable de salida es GS.  
+
+
+\section{Reglas}
+
+Para la 1º etapa utilizamos las siguientes reglas:
+
+\begin{itemize}
+    \item \textbf{R1}: Si L es \textit{Grande}, E es \textit{Joven\_Adulto}, y I es \textit{Medio}, entonces TF es \textit{Medio\_Bajo}.
+    \item \textbf{R2}: Si L es \textit{Grande}, E es \textit{Joven} y I es \textit{Medio}, entonces TF es \textit{Medio\_Alto}.
+    \item \textbf{R3}: Si L es \textit{Grande}, E es \textit{Adulto} y I es \textit{Bajo}, entonces TF es \textit{Alto}.
+    \item \textbf{R4}: Si L es \textit{Medio}, E es \textit{Joven\_Adulto} y I es \textit{Alto}, entonces TF es \textit{Medio\_Bajo}.
+    \item \textbf{R5}: Si I es \textit{Bajo}, entonces TF es \textit{Alto}.
+    \item \textbf{R6}: Si L es \textit{Pequeño}, entonces TF es \textit{Bajo}.
+\end{itemize}
+
+En esta etapa, utilizamos la técnica del valor medio del máximo del área.
+
+\vspace{2 mm}
+
+En la 2º etapa aplicamos las reglas:
+
+\begin{itemize}
+    \item \textbf{R7}: Si TF es \textit{Bajo}, y PM es \textit{Alto}, entonces GS es \textit{Medio}.
+    \item \textbf{R8}: Si TF es \textit{Medio\_Alto} o \textit{Alto}, y TL es \textit{Poco}, entonces GS es \textit{Alto}.
+    \item \textbf{R9}: Si TF es \textit{Medio\_Bajo}, TL es \textit{Medio}, y PM es \textit{Bajo}, entonces GS es \textit{Medio}.
+    \end{itemize}
+
+En la segunda etapa, empleamos el método de defuzzificación centroide.
+\vspace{2 mm}
+
+Al trascribir las reglas a Fispro dividimos \textbf{R8}, en dos:
+\begin{itemize}
+    \item \textbf{R8.1}: si TF es \textit{Alto} y TL es \textit{Poco}, GS es \textit{Alto}.
+    \item \textbf{R8.2}: si TF es \textit{Medio\_Alto} y TL es \textit{Poco}, entonces GS es \textit{Alto}.
+    \end{itemize}
+    
+Mientras que a las demás, las escribimos como las planteamos originalmente.
+
+
+\section{Caso de ejemplo}
+
+Considerando la siguiente información:
+
+\begin{itemize}
+  \item Una novela de 668 páginas, L = 668.
+  \item La edad del lector de alrededor 46 años, E = 46.
+  \item Grado de interés que llega sólo al 35\%, I = 35.
+  \end{itemize}
+
+Concluimos que el tiempo esperado de lectura es aproximadamente de 195 horas.
+Se disparan las reglas \textbf{R1}, \textbf{R3}, y \textbf{R5}.
+
+Luego, tomando el valor \textit{crisp} de TF anterior, TF = 195. Más los siguientes datos:
+
+\begin{itemize}
+  \item El lector tiene 4.9 horas libres por día, TL = 4.9.
+  \item Un plazo límite de 16 días, PM = 16.
+\end{itemize}
+
+Obtenemos que el grado de saturación es 97.9\%. 
+Vemos que solo se dispara la regla \textbf{R8.1}.
+
+\section{Observaciones}
+
+\begin{itemize}
+  \item En la defuzzificación utilizamos como T-Norma el mínimo.
+  \item Solo consideramos a los libros dentro del genero literario de cuentos y novelas.
+  \item El tiempo libre que tiene el lector por día, lo utiliza para la lectura del libro en cuestión.
+  \item El grado de saturación se refiere al esfuerzo diario realizado por el lector para concluir su lectura dentro del plazo límite
+    que tiene estipulado. Consideramos que la lectura del libro se completa (observemos que si dejamos libre el hecho de si se concluye o no la lectura, se deberían agregar mas variables a nuestro análisis).
+  \end{itemize}
+
+\section{Integrantes}
+\begin{itemize}
+  \item Bonet, Javier.
+  \item Catacora, Joel.
+  \item Oviedo, Juan Manuel.
+\end{itemize}
+
+\end{document}
