@@ -1,0 +1,57 @@
+[System]
+Name='Libro_2da_Etapa'
+Ninputs=3
+Noutputs=1
+Nrules=4
+Nexceptions=0
+Conjunction='min'
+MissingValues='random'
+
+[Input1]
+Active='yes'
+Name='Tiempo_Lectura'
+Range=[       0.000 ,     200.000 ]
+NMFs=4
+MF1='Bajo','SemiTrapezoidalInf',[       0.000 ,      20.000 ,      40.000 ]
+MF2='Medio_Bajo','trapezoidal',[      20.000 ,      40.000 ,      60.000 ,      80.000 ]
+MF3='Medio_Alto','trapezoidal',[      60.000 ,      80.000 ,     100.000 ,     120.000 ]
+MF4='Alto','SemiTrapezoidalSup',[     100.000 ,     120.000 ,     200.000 ]
+
+[Input2]
+Active='yes'
+Name='Tiempo_Libre'
+Range=[       0.000 ,      14.000 ]
+NMFs=3
+MF1='Poco','SemiTrapezoidalInf',[       0.000 ,       4.000 ,       6.000 ]
+MF2='Medio','triangular',[       4.000 ,       7.000 ,      10.000 ]
+MF3='Alto','SemiTrapezoidalSup',[       8.000 ,      10.000 ,      14.000 ]
+
+[Input3]
+Active='yes'
+Name='Plazo_Límite'
+Range=[       1.000 ,      31.000 ]
+NMFs=2
+MF1='Bajo','SemiTrapezoidalInf',[       1.000 ,      15.000 ,      25.000 ]
+MF2='Alto','SemiTrapezoidalSup',[      15.000 ,      25.000 ,      31.000 ]
+
+[Output1]
+Nature='fuzzy'
+Defuzzification='area'
+Disjunction='sum'
+DefaultValue=      -1.000 
+Classif='no' 
+Active='yes'
+Name='Saturación'
+Range=[       0.000 ,       1.000 ]
+NMFs=3
+MF1='Bajo','SemiTrapezoidalInf',[      -0.278 ,       0.200 ,       0.350 ]
+MF2='Medio','triangular',[       0.200 ,       0.400 ,       0.600 ]
+MF3='Alto','SemiTrapezoidalSup',[       0.500 ,       0.700 ,       1.404 ]
+
+[Rules]
+1, 0, 2,        2.000 ,
+4, 1, 0,        3.000 ,
+3, 1, 0,        3.000 ,
+2, 2, 1,        2.000 ,
+
+[Exceptions]
