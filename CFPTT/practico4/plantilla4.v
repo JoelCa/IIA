@@ -35,9 +35,8 @@ Inductive leq : nat -> nat -> Prop :=
 Inductive eq_list (A:Set):list A -> list A -> Prop :=
     eq0 : eq_list A (nil A) (nil A)
   | eqS : forall (a b:A) (l1 l2:list A), eq_list A l1 l2 -> a = b -> eq_list A (cons A a l1) (cons A b l2).
-(*Alternativamente podría hacer forall (a:A) (l1 l2:list A), eq_list A l1 l2 -> eq_list A (cons A a l1) (cons A a l2),
-pero deja "implicita" la igual, hay casos donde NO podría aplicarse, dado que la igualdad
-no es obvia*)
+(* Alternativamente podría hacer forall (a:A) (l1 l2:list A), eq_list A l1 l2 -> eq_list A (cons A a l1) (cons A a l2),
+pero deja "implicita" la igual, hay casos donde NO podría aplicarse, dado que la igualdad no es obvia *)
 
 (* 1.5 *)
 Inductive sorted (A:Set):list A -> (A->A->Prop) -> Prop :=
@@ -110,7 +109,7 @@ End Ejercicio2.
 Section Ejercicio3.
 (* 3.1 *)
 (* El "struc" indica el argumento que será estructuralmente menor
-en la llamada recursiva, en general no es necesario *)
+en la llamada recursiva, en general no es necesario. *)
 Fixpoint sum (n m:nat) {struct n}: nat :=
   match n with
   | 0 => m
@@ -238,7 +237,7 @@ Definition listN := list nat.
 
 Print listN.
 
-(* Puedo importar librerias? sí *)
+(* Puedo importar librerias? Sí *)
 Fixpoint member (n:nat) (l:listN):bool :=
   match l with
   | nil => false
@@ -337,7 +336,7 @@ End Ejercicio7.
 Section Ejercicio8.
 
 (* 8.1 *)
-(* uso induction o case? En este caso son lo mismo *)
+(* Uso induction o case? En este caso son lo mismo *)
 Lemma conmutatividadAnd : forall a b:bool, And a b = And b a.
 Proof.
   intros x y.
@@ -461,7 +460,7 @@ End Ejercicio8.
 Section Ejercicio9.
 
 (* 9.1 *)
-(* está bien usar "induction" para probar sobre Fixpoint? Si*)
+(* Está bien usar "induction" para probar sobre Fixpoint? Si*)
 Lemma SumO : forall n : nat, sum n 0 = n.
 Proof.
   intro x.
@@ -487,7 +486,7 @@ Proof.
 Qed.
 
 (* 9.3 *)
-(* Hay una táctica que sirva como éste lema? *)
+(* Hay una táctica que sirva como éste lema? Si, apply f_equal. O sino, usar "rewrite". *)
 (* No lo uso, se puede BORRAR *)
 Lemma aux:forall n m:nat, n=m -> S n = S m.
 Proof.
@@ -550,7 +549,7 @@ Proof.
   
     simpl.
     rewrite (IHn 0).
-    simpl; reflexivity.  (* cuando hago doble inducción, en el último caso tengo "dos m", hace falta que renombre? *)
+    simpl; reflexivity.  (* Cuando hago doble inducción, en el último caso tengo "dos m", hace falta que renombre? No. *)
 
     simpl; rewrite <- IHm.
     rewrite (IHn (S m)).
@@ -563,7 +562,7 @@ Proof.
 Qed.
 
 (* 9.7 *)
-(* Puedo hacer éste ejericicio antes del 9.6? Sí *)
+(* Puedo hacer éste ejercicio antes del 9.6? Sí *)
 Lemma ProdDistr : forall n m p : nat, prod n (sum m p) = sum (prod n m) (prod n p).
 Proof.
   induction n.
@@ -607,7 +606,7 @@ Proof.
 Qed.
 
 (* 10.2 *)
-(* Está bien usar "discriminate"? *)
+(* Está bien usar "discriminate"? Sí *)
 Lemma L2 : forall (A : Set) (l : list A) (a : A), ~(cons A a l) = nil A.
 Proof.
   intros; unfold not; intro H.
@@ -652,7 +651,7 @@ Proof.
 Qed.
 
 (* 11.3 *)
-(* Puedo usar éste lema antes? *)
+(* Puedo usar éste lema antes? Sí *)
 Lemma L9 : forall (A : Set) (l m n : list A),
 append A l (append A m n) = append A (append A l m) n.
 Proof.
@@ -722,7 +721,7 @@ Proof.
       rewrite (IHl m' P'); reflexivity.
 Qed.
 
-(* 11.3 (está echo más arriba)*)
+(* 11.3, está echo en la sección Ejercicio10 *)
 
 (* 11.4 *)
 Lemma L10 : forall (A : Set) (l : list A), reverse A (reverse A l) = l.
@@ -879,30 +878,41 @@ Section Ejercicio16.
 (* 16.1 *)
 (* posfijo l1 l2 <-> l1 es un posfijo de l2 *)
 Inductive posfijo (A:Set):list A -> list A -> Prop :=
-    posfijo0 : forall (l :list A), posfijo A l l
-  | posfijoS : forall (l1 l2:list A) (a:A), posfijo A l1 l2 -> posfijo A l1 (cons A a l2).
+    posfijoB : forall (l :list A), posfijo A l l
+  | posfijoC : forall (l1 l2:list A) (a:A), posfijo A l1 l2 -> posfijo A l1 (cons A a l2).
 
 (* 16.2 *)
-
 Lemma ej16_2a : forall (A:Set) (l1 l2 l3:list A), l2 = append A l3 l1 -> posfijo A l1 l2.
 Proof.
-  (* otra forma seria hacer induccion sobre l3, antes de hacer induccion 
-     reescribir l2 y borrar la igualdad *)
   induction l2.
     intros; simpl.
     destruct l1.
-      exact (posfijo0 A (nil A)).
+      exact (posfijoB A (nil A)).
       destruct l3.
         simpl in H; discriminate H.
         rewrite <- (L3 A l3 (cons A a l1) a0) in H; discriminate H.
 
    intros l3' H.
    destruct l3'.
-     simpl in H; rewrite H; exact (posfijo0 A l1).
+     simpl in H; rewrite H; exact (posfijoB A l1).
      rewrite <- (L3 A l3' l1 a0) in H.
      injection H; intros; clear H.
-     exact (posfijoS A l1 l2 a ((IHl2 l3') H0)).
+     exact (posfijoC A l1 l2 a ((IHl2 l3') H0)).
 Qed.
+
+(* En ésta forma se hace induccion sobre l3, pero antes de hacer induccion se reescribe l2 y se borra la igualdad *)
+Lemma ej16_2a' : forall (A:Set) (l1 l2 l3:list A), l2 = append A l3 l1 -> posfijo A l1 l2.
+Proof.
+  intros.
+  rewrite H; clear H.
+  induction l3.
+    simpl; exact (posfijoB A l1).
+
+    rewrite <- (L3 A l3 l1 a).
+    apply (posfijoC A l1 (append A l3 l1)).
+    assumption.
+Qed.
+
 
 Lemma ej16_2b : forall (A:Set) (l1 l2:list A), posfijo A l1 l2 -> exists (l3:list A), l2 = append A l3 l1.
 Proof.
@@ -915,7 +925,7 @@ Proof.
     exists (cons A a x).
     rewrite <- (L3 A x l1).
     (* otra forma seria hacer: rewrite H0 *)
-    apply f_equal. (* puedo usar f_equal? *)
+    apply f_equal. (* puedo usar f_equal? Si*)
     assumption.
 Qed.
 
@@ -926,39 +936,24 @@ Fixpoint ultimo (A:Set) (l:list A):list A :=
   | cons x nil => cons A x (nil A)
   | cons x l'' => ultimo A l''  (* está bien? Si *)
   end.
-(*  | cons x l' => 
-    match l' with
-    | nil => cons A x (nil A)
-    | l'' => ultimo A l''
-    end
-  end.
-*)
-
-Print ultimo.
 
 (* 16.4 *)
 Lemma ej16_4aux : forall (A:Set) (l:list A) (a a':A), ultimo A (cons A a (cons A a' l)) = ultimo A (cons A a' l).
 Proof.
-  induction l.
-    intros; simpl; reflexivity.
-    intros a'' a'''.
-    assert(ultimo A (cons A a''' (cons A a l)) = ultimo A (cons A a l)); [exact (IHl a''' a)|idtac].
-    simpl in H.
-    simpl.
-    assumption.
+  intros; simpl; reflexivity.
 Qed.
 
 Lemma ej16_4 : forall (A:Set) (l:list A), posfijo A (ultimo A l) l.
 Proof.
   induction l.
     simpl.
-    exact (posfijo0 A (nil A)).
+    exact (posfijoB A (nil A)).
 
     destruct l.
       simpl.
-      exact (posfijo0 A (cons A a (nil A))).
+      exact (posfijoB A (cons A a (nil A))).
       rewrite (ej16_4aux A l a a0).
-      exact ((posfijoS A (ultimo A (cons A a0 l)) (cons A a0 l) a) IHl).
+      exact ((posfijoC A (ultimo A (cons A a0 l)) (cons A a0 l) a) IHl).
 Qed.
 
 End Ejercicio16.
@@ -968,7 +963,7 @@ End Ejercicio16.
 Section Ejercicio17.
 
 (* 17.1 *)
-(* es un arbol completo, pues las hojas siempre tienen un elemento *)
+(* Es un arbol completo, pues las hojas siempre tienen un elemento *)
 Inductive ABin (A B:Set):Set :=
   | ABLeaf : B -> ABin A B
   | ABCons : forall (_:A) (ab1 ab2:ABin A B), ABin A B.
@@ -1012,7 +1007,9 @@ Inductive Tree_ : Set :=
   | nullT : Tree_
   | consT : A -> Tree_ -> Tree_ -> Tree_.
 
-(* 18.1 *) (* Por que si uso un \/, el principio de inducción sale mal? *)
+(* 18.1 *)
+(* Por que si uso un \/, el principio de inducción sale mal?
+Es conveniente NO hacer definiciones inductivas que tengan \/. *)
 Inductive isSubTree : Tree_ -> Tree_ -> Prop :=
   | sb_iguales : forall (t:Tree_), isSubTree t t
   | sb_izq : forall (t t1 t2:Tree_ ) (a:A), isSubTree t t1 -> isSubTree t (consT a t1 t2)
@@ -1037,6 +1034,7 @@ Proof.
 Qed.
 
 End Ej_18.
+
 
 (* Ejercicio 19 *)
 Section Ejercicio19.
