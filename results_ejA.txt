@@ -4,3 +4,11 @@ errores_naive_b.txt
 34.19996 4.917577
 errores_svm_linear.txt
 28.38059 5.245975
+
+"RESULTADOS" de rbf_nb.txt 
+[1] "+:-0.557488078067105"
+[1] "-:-10.2500979219329"
+
+"RESULTADOS" de rbf_linear.txt
+[1] "+:1.766134573461"
+[1] "-:-3.428494573461"
