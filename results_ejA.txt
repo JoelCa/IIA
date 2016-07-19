@@ -1,0 +1,6 @@
+errores_dtree.txt
+27.43 3.762106
+errores_naive_b.txt
+34.19996 4.917577
+errores_svm_linear.txt
+28.38059 5.245975
